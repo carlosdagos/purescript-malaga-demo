@@ -290,4 +290,14 @@ https://github.com/purescript/purescript/wiki/Editor-and-tool-support
 
 #### A basic toolset
 
+Pulp! It's our most basic build tool.
 
+```bash
+$ mkdir example-app          # Makes a dir to work on
+$ npm init .                 # Starts a new project (creates package.json)
+$ npm install --save pulp    # Install pulp as a dependency
+$ pulp init                  # Creates a project skeleton
+$ pulp psci                  # Launches us into a console
+```
+
+---
