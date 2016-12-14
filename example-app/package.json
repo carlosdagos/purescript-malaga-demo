@@ -1,0 +1,20 @@
+{
+  "name": "example-app",
+  "version": "1.0.0",
+  "description": "Example App for PureScript",
+  "main": "index.js",
+  "dependencies": {
+    "pulp": "^10.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "app",
+    "purescript"
+  ],
+  "author": "Carlos D",
+  "license": "WTFPL"
+}
