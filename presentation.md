@@ -17,7 +17,9 @@ _You may not know it, but you may be suffering from [JavaScript Fatigue](https:/
 - Practical PureScript
     - Intro
     - Your basic toolset
+    - Intro to the language
     - Looking at the produced output
+    - Interop-_ing_
     - Demo of a working application
 
 #### Code samples
@@ -25,6 +27,10 @@ _You may not know it, but you may be suffering from [JavaScript Fatigue](https:/
 ```bash
 $ git clone https://github.com/charlydagos/purescript-malaga-demo.git
 ```
+
+#### My purpose
+
+To get _at least some of you_ interested in developing apps with PureScript.
 
 ---
 
@@ -99,7 +105,9 @@ the same output?
 
 ##### Abstraction, Abstraction, Abstraction
 
-TODO: Write about abstraction
+- What makes functions so different from other _citizens_?
+- What can we do with functions when they're first-class citizens?
+- Why is this important?
 
 ---
 
@@ -278,9 +286,7 @@ This is great! But not enough. We'll see more soon!
 
 ##### Where can we write PureScript?
 
-I use nvim.
-
-Another option is Atom editor with the plugins recommended here
+I use nvim, another option is Atom editor with the plugins recommended here
 
 https://github.com/purescript/purescript/wiki/Editor-and-tool-support
 
@@ -294,10 +300,168 @@ Pulp! It's our most basic build tool.
 
 ```bash
 $ mkdir example-app          # Makes a dir to work on
+$ cd example-app             # Switch to that dir
 $ npm init .                 # Starts a new project (creates package.json)
 $ npm install --save pulp    # Install pulp as a dependency
 $ pulp init                  # Creates a project skeleton
 $ pulp psci                  # Launches us into a console
 ```
 
+This gets us ready to start writing :)
+
+##### Personal recommendation
+
+`npm install -g pscid`
+
+Run [`pscid`](https://github.com/kRITZCREEK/pscid) in a shell next to your
+code to get an immediate update on errors and warnings.
+
 ---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### Basic syntax
+
+The type system should tell us _everything_ we need to know about a function, and
+for this we use the `::` symbol, which can be translated as `is of type`
+
+```haskell
+f :: Int
+f = 2
+```
+
+##### Modules
+
+All the code in PureScript is separated into `modules`, in other
+words:
+
+```haskell
+module Main where
+
+f :: MyType
+f = ...
+
+g :: SomeType -> AnotherType
+g = ...
+```
+
+---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### The type system
+
+Strongly typed. What would be _weakly_ typed?
+
+##### Functions
+
+```haskell
+-- What is f?
+f :: Int -> Int -> Int
+f x y = x + y
+
+-- What is g?
+g :: Int
+g = 2
+
+-- What is h?
+h :: (Int -> Int) -> [Int] -> Int
+h f ints = sum (map f ints)
+```
+
+---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### Data types
+
+```haskell
+--   Type
+data Hand
+    = Rock      -- Values
+    | Paper
+    | Scissors
+
+--   Type
+data Maybe a
+    = Nothing   -- Values
+    | Just a
+```
+
+_Types_ vs _Values_? What's the relationship?
+
+---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### Declarative programming and pattern-matching
+
+```haskell
+data List a = End | Cons a (List a)
+
+myList :: List Int
+myList = Cons 1 (Cons 2 (Cons 3 End))
+
+emptyList :: List Int
+emptyList = End
+
+find :: Int -> List Int -> Maybe Int
+find x (Cons y rest) = if x == y
+                          then Just x
+                          else find x rest
+find _ End = Nothing
+
+main = do
+    log (head myList)    -- Prints "Just 1"
+    log (head emptyList) -- Prints "Nothing"
+
+-- ^ Can that be abstracted? Yes.
+```
+
+---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### Effects
+
+---
+
+# Practical PureScript
+
+#### Produced output
+
+PureScript's author's intention is to make the ouput easy to read
+and to debug.
+
+_Sidenote: CoffeeScript, anyone?_
+
+---
+
+# Practical PureScript
+
+#### Interop
+
+Why would we need such a thing?
+
+Foreign Function Interface (FFI)
+
+---
+
+# Practical PureScript
+
+## A working app
+
+- Pux
+- Webpack
+- Bower
+
