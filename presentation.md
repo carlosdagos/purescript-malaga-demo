@@ -440,10 +440,15 @@ main = do
 
 #### Produced output
 
-PureScript's author's intention is to make the ouput easy to read
-and to debug.
+PureScript's author's intention is to make the ouput *easy to read
+and to debug*.
 
 _Sidenote: CoffeeScript, anyone?_
+
+- Basic functions.
+- Higher-order function.
+- Simple data types.
+- `Maybe a` example.
 
 ---
 
