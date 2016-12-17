@@ -9,6 +9,7 @@ import Examples.Foreign
 import Control.Monad.Eff         (Eff)
 import Control.Monad.Eff.Console (CONSOLE, log)
 
+-- Example for record types
 type MyRecord t = { name :: String
                   , lastName :: String
                   | t
@@ -17,6 +18,12 @@ type MyRecord t = { name :: String
 fullName :: forall t. MyRecord t -> String
 fullName record = record.name <> " " <> record.lastName
 
-main :: forall e. Eff (console :: CONSOLE | e) Unit
+-- Examples for effects
+trivialEff :: forall e. Eff e String
+trivialEff = pure "World"
+
+main :: Eff (console :: CONSOLE) Unit
 main = do
-  log "Hello sailor!"
+  string <- trivialEff
+  log "Hey what's up..."
+  log $ "..." <> string <> "!"

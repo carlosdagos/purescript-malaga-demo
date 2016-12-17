@@ -474,8 +474,26 @@ We use the `Eff` _monad_ .red.bold[³].
 
 ##### Effects
 
+What makes these functions so different?
 
+```purescript
+module Main where
 
+import Control.Monad.Eff         (Eff)
+import Control.Monad.Eff.Console (CONSOLE, log)
+
+trivialEff :: forall e. Eff e String
+trivialEff = pure "World"
+
+main :: Eff (console :: CONSOLE) Unit
+main = do
+  string <- trivialEff
+  log "Hey what's up..."
+  log $ "..." <> string <> "!"
+```
+
+- What is the type of `main`?
+- How is it different from `->`?
 
 ---
 

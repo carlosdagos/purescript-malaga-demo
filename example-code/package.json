@@ -1,7 +1,7 @@
 {
-  "name": "example-app",
+  "name": "example-code",
   "version": "1.0.0",
-  "description": "Example App for PureScript",
+  "description": "Example Code for PureScript",
   "main": "index.js",
   "dependencies": {
     "pulp": "^10.0.0"
