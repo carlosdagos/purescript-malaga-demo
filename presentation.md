@@ -107,7 +107,14 @@ the same output?
 
 - What makes functions so different from other _citizens_?
 - What can we do with functions when they're first-class citizens?
-- Why is this important?
+
+##### Why is this important?
+
+- What is our role as engineers and/or developers?
+- How can we achieve this?
+- What _mechanisms_ do we have?
+
+How does functional programming *and* strong typing help us achieve this?
 
 ---
 
@@ -171,7 +178,7 @@ It's important to learn the difference between
 
 - Languages
 - Compilers
-- Runtimes
+- Interpreters
 
 A strongly-typed _language_ allows a _compiler_ implementation to make use
 of all the information supplied by the language in order to perform a
