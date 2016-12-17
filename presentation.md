@@ -56,7 +56,7 @@ I currently write Haskell.
 
 #### What is it?
 
-It's a programming paradigm where we treat functions as _first class citizens_*.
+It's a programming paradigm where we treat functions as _first class citizens_.red.bold[¹].
 
 It means that...
 
@@ -67,7 +67,7 @@ It means that...
 Is JavaScript a _functional programming language_?
 
 
-.footnote[.red.bold[\*] Evaluation order and avoidance of state and mutability
+.footnote[.red.bold[¹] Evaluation order and avoidance of state and mutability
 is also part of the paradigm.]
 
 ---
@@ -382,16 +382,23 @@ h f ints = sum (map f ints)
 ##### Data types
 
 ```haskell
---   Type
-data Hand
-    = Rock      -- Values
-    | Paper
-    | Scissors
+-- Type
+data Hand = Rock | Paper | Scissors -- Values
 
---   Type
-data Maybe a
-    = Nothing   -- Values
-    | Just a
+-- Type
+data Maybe a = Nothing | Just a     -- Values
+
+-- Type Alias
+type NameRecord t = { name :: String
+                    , lastName :: String
+                    | t
+                    }
+
+fullName :: forall t. NameRecord t -> String
+fullName record = record.name <> " " <> record.lastName
+
+fullName' :: forall t. { name :: String, lastName :: String | t } -> String
+fullName' record = record.name <> " " <> record.lastName
 ```
 
 _Types_ vs _Values_? What's the relationship?
@@ -423,7 +430,7 @@ main = do
     log (head myList)    -- Prints "Just 1"
     log (head emptyList) -- Prints "Nothing"
 
--- ^ Can that be abstracted? Yes.
+-- ^ Can that be abstracted?
 ```
 
 ---
@@ -433,6 +440,35 @@ main = do
 #### Intro to the language
 
 ##### Effects
+
+So far we've seen functions that don't do "anything".red.bold[²] 🙄
+
+What about functions that do:
+
+- Console IO
+- Throw Exceptions
+- Perform DOM manipulation
+- Perform XMLHttpRequest / AJAX calls
+- Interact with a websocket
+- Read/Write to/from some storage
+
+We use the `Eff` _monad_ .red.bold[³].
+
+.footnote[
+.red.bold[²] Used very, very loosely 🤓 <br/>
+.red.bold[³] We won't get into this today
+]
+
+---
+
+# Practical PureScript
+
+#### Intro to the language
+
+##### Effects
+
+
+
 
 ---
 
@@ -456,9 +492,14 @@ _Sidenote: CoffeeScript, anyone?_
 
 #### Interop
 
-Why would we need such a thing?
+- Why would we need such a thing?
 
-Foreign Function Interface (FFI)
+We don't want to rewrite the wheel!
+
+- Foreign Function Interface (FFI)
+
+It's as simple as placing a file of the same name next to the PureScript file
+with a `.js` extension, and using `exports` accordingly. Let's see an example.
 
 ---
 

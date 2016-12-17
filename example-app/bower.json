@@ -9,7 +9,8 @@
   "dependencies": {
     "purescript-console": "^1.0.0",
     "purescript-maybe": "^2.0.1",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "purescript-partial": "^1.1.2"
   },
   "devDependencies": {
     "purescript-psci-support": "^1.0.0"
