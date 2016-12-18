@@ -4,15 +4,16 @@
     <title>Frontend Málaga - December 20th 2016</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Roboto);
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Roboto);
       @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-      body {
-        font-family: 'Roboto';
+      body, h3, h4, h5, h6 {
+          font-family: 'Roboto';
       }
-      h1, h2, h3 {
-        font-family: 'Roboto';
+      h1, h2 {
+        font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
       h2 {
@@ -133,7 +134,9 @@
     </script>
     <script>
       var slideshow = remark.create({
-        sourceUrl: 'presentation.md'
+        sourceUrl:         'presentation.md',
+        highlightStyle:    'github',
+        highlightLanguage: true
       });
     </script>
 </body>
