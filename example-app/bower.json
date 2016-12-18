@@ -1,0 +1,13 @@
+{
+  "name": "purescript-example-app",
+  "homepage": "git clone https://github.com/charlydagos/purescript-malaga-demo.git",
+  "authors": [
+  ],
+  "description": "Example app",
+  "main": "support/index.js",
+  "license": "BSD3",
+  "dependencies": {
+    "purescript-pux": "^7.0.0",
+    "purescript-pux-devtool": "^4.1.0"
+  }
+}
