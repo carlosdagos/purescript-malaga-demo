@@ -492,8 +492,7 @@ main = do
   log $ "..." <> string <> "!"
 ```
 
-- What is the type of `main`?
-- How is it different from `->`?
+What is the type of `main`?
 
 ---
 
