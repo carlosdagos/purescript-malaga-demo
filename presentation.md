@@ -7,6 +7,18 @@ _You may not know it, but you may be suffering from [JavaScript Fatigue](https:/
 #### Frontend Málaga Meetup
 #### Málaga, December 20th 2016
 ##### [Carlos D.](https://github.com/charlydagos)
+---
+
+# What this talk is about
+
+- The whats and the whys
+- Practical usage
+
+# What this talk not is about
+
+- _Functors, Applicatives, Semigroups, Monoids, Monads..._
+
+Though we can talk about this briefly, of course!
 
 ---
 
@@ -535,3 +547,23 @@ with a `.js` extension, and using `exports` accordingly. Let's see an example.
 - Webpack
 - Bower
 
+---
+
+# Further Reading
+
+##### On PureScript
+
+- Learn PureScript: http://www.purescript.org/learn/
+- PureScript by Example: https://leanpub.com/purescript
+
+##### On Haskell
+
+- Learn You a Haskell For Great Good: http://learnyouahaskell.com/
+- Haskell Book: http://haskellbook.com/
+- What I wish I knew when learning Haskell: http://dev.stephendiehl.com/hask/
+
+##### On Category Theory
+
+- Category Theory by Steve Awodey
+- Category Theory for Developers: https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
+- Category Theory for Developers (Videos): https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_
