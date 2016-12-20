@@ -6,6 +6,9 @@ data Maybe a = Nothing | Just a
 fromJust :: forall a. Partial => Maybe a -> a
 fromJust (Just x) = x
 
+isJust :: forall a. Maybe a -> Boolean
+isJust (Just _) = true
+isJust Nothing  = false
 
 -- A little bit more "complicated"
 -- What does this represent?
